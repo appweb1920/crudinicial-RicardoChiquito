@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return "home";});
+Route::get('/hola', 'puntos_de_reciclajeController@creacion');
+Route::get('/adios', 'puntos_de_reciclajeController@enlistado');
