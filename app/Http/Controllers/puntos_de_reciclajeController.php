@@ -31,6 +31,12 @@ class puntos_de_reciclajeController extends Controller
        // ->with('ha',$horario_Apertura)
        // ->with('hc',$horario_Cierre);
     }
+
+    public function MuestraEdicion($id)
+    {
+        $punre = puntos_Reciclaje::find($id);
+        return view('editaPR')->with('punre',$punre);
+    }
     /**
      * Display a listing of the resource.
      *

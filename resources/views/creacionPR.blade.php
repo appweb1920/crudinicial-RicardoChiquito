@@ -11,8 +11,27 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> Puntos de Reciclaje </h1>
-
+<div class="container">
+<header class="header">
+        <div class="wrapper">
+            <nav>				
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="container">
+							<div class="nav-collapse">
+								
+								<form action="#" class="navbar-search form-inline" style="margin-top:6px"></form>
+								<ul class="nav pull-right">
+								<h1> Puntos de Reciclaje </h1>				 
+								</ul>
+							</div><!-- /.nav-collapse -->
+						</div>
+					</div>
+				</div>
+            </nav>
+		</div>
+		
+    </header>
     <div>
         <h2>Agrega Puntos de  Reciclaje</h2>
     </div>
@@ -33,14 +52,13 @@
 
     @if(!is_null($puntos_Reciclaje))
         @foreach($puntos_Reciclaje as $pr)
-            <p>{{$pr->tipoBasura}}</p> 
-            <p>{{$pr->direccion}}</p>
-            <p>{{$pr->horario_Apertura}}</p>  
-            <p>{{$pr->horario_Cierre}}</p>
+            <p>{{$pr->tipoBasura}}   {{$pr->direccion}}  {{$pr->horario_Apertura}}
+               {{$pr->horario_Cierre}}</p>
+            <a href="/editar/{{$pr->id}}">Editar</a>
+            
         @endforeach
     @endif
    
-    
     
 </body>
 </html>
