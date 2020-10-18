@@ -20,7 +20,7 @@
     <form action="/adios" method="POST">
     @csrf
     <H4>Tipo de Basura</H4>
-    <input type="text"  name="tipoBasura" placeholder="Nombre" class="form-control mb-2">
+    <input type="text"  name="tipoBasura" placeholder="Tipo" class="form-control mb-2">
     <H4>Direccion</H4>
     <input type="text"  name="direccion" placeholder="Dirección" class="form-control mb-2">
     <H4>Hora de Apertura</H4>
@@ -31,8 +31,16 @@
     <button type="submit" class="btn btn-secondary">Enviar</button>
     </form>
 
-    @if(isset($tb))
-    <p>{{$tb}} {{$dir}} {{$ha}}  {{$hc}} </p>
+    @if(!is_null($puntos_Reciclaje))
+        @foreach($puntos_Reciclaje as $pr)
+            <p>{{$pr->tipoBasura}}</p> 
+            <p>{{$pr->direccion}}</p>
+            <p>{{$pr->horario_Apertura}}</p>  
+            <p>{{$pr->horario_Cierre}}</p>
+        @endforeach
     @endif
+   
+    
+    
 </body>
 </html>

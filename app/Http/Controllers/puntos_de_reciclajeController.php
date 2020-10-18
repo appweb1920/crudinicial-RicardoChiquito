@@ -5,39 +5,31 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\puntos_Reciclaje;
 use App\recolectores;
+use App\detalle_recolectorController;
 
 class puntos_de_reciclajeController extends Controller
 {
     public function agregapuntos()
     {
-        return view('creacionPR');
+        $pr = puntos_Reciclaje::all();
+        return view('creacionPR')->with('puntos_Reciclaje',$pr);
     }
-
-    //public function creacion(Request $request)
-    //{
-        //return $request->all();
-      //  $nuevoDato->tipoBasura = $request->tipoBasura;
-        //$nuevoDato->direccion = $request->direccion;
-        //$nuevoDato->horario_Apertura = $request->horario_Apertura;
-        //$nuevoDato->horario_Cierre = $request->horario_Cierre;
-
-        
-
-        //return back();
-    //}
 
     public function enlistado(Request $request)
     {
-        $tipoBasura = $request->tipoBasura;
-        $direccion = $request->direcccion;
-        $horario_Apertura = $request->horario_Apertura;
-        $horario_Cierre = $request->horario_Cierre;
+        $punre= new puntos_Reciclaje;
+        $punre->tipoBasura = $request->tipoBasura;
+        $punre->direccion = $request->direccion;
+        $punre->horario_Apertura = $request->horario_Apertura;
+        $punre->horario_Cierre = $request->horario_Cierre;
 
-        return  view('creacionPR')
-        ->with('tb',$tipoBasura)
-        ->with('dir',$direccion)
-        ->with('ha',$horario_Apertura)
-        ->with('hc',$horario_Cierre);
+        $punre->save();
+
+        return  view('creacionPR');
+       //->with('tb',$tipoBasura)
+       // ->with('dir',$direccion)
+       // ->with('ha',$horario_Apertura)
+       // ->with('hc',$horario_Cierre);
     }
     /**
      * Display a listing of the resource.

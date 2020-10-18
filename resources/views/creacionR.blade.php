@@ -17,7 +17,7 @@
         <h2>Agrega Recolectores</h2>
     </div>
 
-    <form action="/hola" method="POST">
+    <form action="/adios2" method="POST">
     @csrf
     <H4>Nombre</H4>
     <input type="text"  name="nombre" placeholder="Nombre" class="form-control mb-2"><br>
@@ -25,5 +25,13 @@
     <input type="week"  name="semana" placeholder="Semana" class="form-control mb-2"><br><br>
     <button type="submit" class="btn btn-secondary">Enviar</button>
     </form>
+
+    @if(!is_null($recolectores))
+        @foreach($recolectores as $r)
+            <p>{{$r->nombre}}</p> 
+            <p>{{$r->dias_Recoleccion}}</p>
+        @endforeach
+    @endif
+
 </body>
 </html>

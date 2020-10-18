@@ -2,16 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\recolectores;
+
 use Illuminate\Http\Request;
 use App\puntos_Reciclaje;
+use App\detalle_recolectorController;
+use App\recolectores;
 
 
 class recolectoresController extends Controller
 {
     public function creacion()
     {
-        return view('creacionR');
+        $r = recolectores::all();
+        return view('creacionR')->with('recolectores',$r);
+        
+    }
+
+    public function enlistado2(Request $request)
+    {
+        $reco= new recolectores;
+        $reco->nombre = $request->nombre;
+        $reco->dias_Recoleccion = $request->dias_Recoleccion;
+        $reco->save();
+
+        return  view('creacionR');
+       
     }
     /**
      * Display a listing of the resource.
