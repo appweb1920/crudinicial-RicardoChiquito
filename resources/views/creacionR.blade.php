@@ -22,7 +22,7 @@
     <H4>Nombre</H4>
     <input type="text"  name="nombre" placeholder="Nombre" class="form-control mb-2"><br>
     <H4>Dias de Recoleccion</H4>
-    <input type="week"  name="semana" placeholder="Semana" class="form-control mb-2"><br><br>
+    <input type="week"  name="dias_Recoleccion" placeholder="Semana" class="form-control mb-2"><br><br>
     <button type="submit" class="btn btn-secondary">Enviar</button>
     </form>
 
