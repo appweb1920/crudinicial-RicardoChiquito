@@ -11,8 +11,27 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> Recolectores </h1>
-
+<div class="container">
+<header class="header">
+        <div class="wrapper">
+            <nav>				
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="container">
+							<div class="nav-collapse">
+								
+								<form action="#" class="navbar-search form-inline" style="margin-top:6px"></form>
+								<ul class="nav pull-right">
+								<h1> Recolectores </h1>			 
+								</ul>
+							</div><!-- /.nav-collapse -->
+						</div>
+					</div>
+				</div>
+            </nav>
+		</div>
+		
+    </header>
     <div>
         <h2>Agrega Recolectores</h2>
     </div>
@@ -28,8 +47,8 @@
 
     @if(!is_null($recolectores))
         @foreach($recolectores as $r)
-            <p>{{$r->nombre}}</p> 
-            <p>{{$r->dias_Recoleccion}}</p>
+            <p>{{$r->nombre}}  {{$r->dias_Recoleccion}}</p>
+            <a href="/editar2/{{$r->id}}">Editar</a>
         @endforeach
     @endif
 

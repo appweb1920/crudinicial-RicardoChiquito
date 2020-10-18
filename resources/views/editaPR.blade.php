@@ -10,6 +10,7 @@
     <h1>Editar Datos de Puntos de Recliclaje</h1>
     <form action="guardaEdicion" method="POST">
     @csrf
+    <input type="hidden" name="id" value="{{$punre->id}}">
     <input type="text" name="tipoBasura" value="{{$punre->tipoBasura}}">
     <input type="text" name="direccion" value="{{$punre->direccion}}">
     <input type="time"  name="horario_Apertura" value="{{$punre->horario_Apertura}}">

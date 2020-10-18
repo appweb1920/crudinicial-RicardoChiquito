@@ -26,16 +26,26 @@ class puntos_de_reciclajeController extends Controller
         $punre->save();
 
         return  view('creacionPR');
-       //->with('tb',$tipoBasura)
-       // ->with('dir',$direccion)
-       // ->with('ha',$horario_Apertura)
-       // ->with('hc',$horario_Cierre);
     }
 
     public function MuestraEdicion($id)
     {
         $punre = puntos_Reciclaje::find($id);
         return view('editaPR')->with('punre',$punre);
+    }
+
+    public function guardaEdicion(Request $request)
+    {
+        $punre = puntos_Reciclaje::find($request->id);
+        if(!is_null($punre))
+        {
+            $punre->tipoBasura = $request->tipoBasura;
+            $punre->direccion = $request->direccion;
+            $punre->horario_Apertura = $request->horario_Apertura;
+            $punre->horario_Cierre = $request->horario_Cierre;
+            $punre->save();
+        }
+        return redirect('/hola');
     }
     /**
      * Display a listing of the resource.

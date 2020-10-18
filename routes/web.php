@@ -21,3 +21,7 @@ Route::post('/adios', 'puntos_de_reciclajeController@enlistado');
 Route::post('/adios2', 'recolectoresController@enlistado2');
 
 Route::get('/editar/{id}', 'puntos_de_reciclajeController@MuestraEdicion');
+Route::post('/editar/guardaEdicion', 'puntos_de_reciclajeController@guardaEdicion');
+
+Route::get('/editar2/{id}', 'recolectoresController@MuestraEdicion');
+Route::post('/editar2/guardaEdicion', 'recolectoresController@guardaEdicion');

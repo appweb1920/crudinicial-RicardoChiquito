@@ -28,6 +28,24 @@ class recolectoresController extends Controller
         return  view('creacionR');
        
     }
+
+    public function MuestraEdicion($id)
+    {
+        $reco = recolectores::find($id);
+        return view('editarR')->with('reco',$reco);
+    }
+
+    public function guardaEdicion(Request $request)
+    {
+        $reco = recolectores::find($request->id);
+        if(!is_null($reco))
+        {
+            $reco->nombre = $request->nombre;
+            $reco->dias_Recoleccion = $request->dias_Recoleccion;
+            $reco->save();
+        }
+        return redirect('/hola2');
+    }
     /**
      * Display a listing of the resource.
      *
