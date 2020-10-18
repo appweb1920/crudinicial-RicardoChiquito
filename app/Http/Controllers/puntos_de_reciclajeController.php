@@ -8,10 +8,23 @@ use App\recolectores;
 
 class puntos_de_reciclajeController extends Controller
 {
-    public function creacion()
+    public function agregapuntos()
     {
         return view('creacionPR');
     }
+
+    //public function creacion(Request $request)
+    //{
+        //return $request->all();
+      //  $nuevoDato->tipoBasura = $request->tipoBasura;
+        //$nuevoDato->direccion = $request->direccion;
+        //$nuevoDato->horario_Apertura = $request->horario_Apertura;
+        //$nuevoDato->horario_Cierre = $request->horario_Cierre;
+
+        
+
+        //return back();
+    //}
 
     public function enlistado(Request $request)
     {

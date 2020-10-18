@@ -15,7 +15,6 @@ class DetalleRecolector extends Migration
     {
         Schema::create('detalle_recolcetor', function (Blueprint $table) {
             $table->id();
-            $table-> bigIncrements();
             $table->timestamps();
         });
     }

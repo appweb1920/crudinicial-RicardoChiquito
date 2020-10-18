@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use App\recolectores;
 use Illuminate\Http\Request;
+use App\puntos_Reciclaje;
+
 
 class recolectoresController extends Controller
 {
+    public function creacion()
+    {
+        return view('creacionR');
+    }
     /**
      * Display a listing of the resource.
      *
