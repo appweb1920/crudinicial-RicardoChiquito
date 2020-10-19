@@ -51,7 +51,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>Edicion</th>
                     <th>Nombre</th>
                     <th>Dias de Recoleccion</th>
                 </tr>    

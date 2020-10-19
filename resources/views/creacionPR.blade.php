@@ -56,7 +56,7 @@
         <table>
             <thead>
                 <tr class='warning'>
-                    <th>ID</th>
+                    <th>Edicion</th>
                     <th>tipoBasura</th>
                     <th>direccion</th>
                     <th>horario_Apertura</th>
