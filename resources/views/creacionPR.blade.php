@@ -2,28 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css">
-	<link rel="stylesheet" type="text/css" href="estilos/estilos.css">
+    <link rel="stylesheet" type="text/css" href="estilos/estilos.css">
+    <link rel="stylesheet" href="assets/css/styleAdmin.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
-<div class="container">
-<header class="header">
+<header class="header" Align="center">
+<div class="container" Align="center">
+<h1> Puntos de Reciclaje </h1>				 
         <div class="wrapper">
             <nav>				
 				<div class="navbar">
 					<div class="navbar-inner">
 						<div class="container">
 							<div class="nav-collapse">
-								
-								<form action="#" class="navbar-search form-inline" style="margin-top:6px"></form>
-								<ul class="nav pull-right">
-								<h1> Puntos de Reciclaje </h1>				 
-								</ul>
+							
 							</div><!-- /.nav-collapse -->
 						</div>
 					</div>
@@ -47,17 +46,42 @@
     <H4>Hora de Cierre</H4>
     <input type="time"  name="horario_Cierre" placeholder="Hora de Cierre"><br><br>
 
-    <button type="submit" class="btn btn-secondary">Enviar</button>
+    <button type="submit" class="btn btn-secondary">Enviar</button><br><br>
     </form>
 
-    @if(!is_null($puntos_Reciclaje))
-        @foreach($puntos_Reciclaje as $pr)
-            <p>{{$pr->tipoBasura}}   {{$pr->direccion}}  {{$pr->horario_Apertura}}
-               {{$pr->horario_Cierre}}</p>
-            <a href="/editar/{{$pr->id}}">Editar</a>
-            
-        @endforeach
-    @endif
+    <div class="well well-small">
+    <h4>Tabla de Puntos de Reciclaje</h4>
+	    <hr class="soft"/>
+	    <div class="row-fluid">
+        <table>
+            <thead>
+                <tr class='warning'>
+                    <th>ID</th>
+                    <th>tipoBasura</th>
+                    <th>direccion</th>
+                    <th>horario_Apertura</th>
+                    <th>horario_Cierre</th>
+                </tr>    
+            </thead>
+            <tbody>
+                @foreach($puntos_Reciclaje as $pr)
+                <tr>
+                    <td><a href="/editar/{{$pr->id}}">Editar</a></td>
+                    <td>{{$pr->tipoBasura}}</td>
+                    <td>{{$pr->direccion}}</td>
+                    <td>{{$pr->horario_Apertura}}</td>
+                    <td>{{$pr->horario_Cierre}}</td>  
+                </tr> 
+                @endforeach
+            </tbody>
+
+        </table>
+        <div class="span8">
+    </hr>
+        </div>	
+		
+		
+   
    
     
 </body>

@@ -11,8 +11,11 @@
     <form action="guardaEdicion" method="POST">
     @csrf
     <input type="hidden" name="id" value="{{$reco->id}}">
-    <input type="text" name="nombre" value="{{$reco->nombre}}">
-    <input type="text" name="dias_Recoleccion" value="{{$reco->dias_Recoleccion}}">
+    <h3>Nombre</h3>
+    <input type="text" name="nombre" value="{{$reco->nombre}}"><br>
+    <h3>Dias de Recoleccion</h3>
+    <input type="text" name="dias_Recoleccion" value="{{$reco->dias_Recoleccion}}"><br><br>
+
     <button type="submit" class="btn btn-secondary">Enviar</button>
     </form>
 </body>
