@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\puntos_Reciclaje;
 use App\recolectores;
-use App\detalle_recolectorController;
+use App\detalle_recolector;
 
 class puntos_de_reciclajeController extends Controller
 {
