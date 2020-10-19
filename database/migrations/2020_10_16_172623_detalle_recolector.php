@@ -14,8 +14,11 @@ class DetalleRecolector extends Migration
     public function up()
     {
         Schema::create('detalle_recolcetor', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('idPuntoRecoleccion');
+            $table->foreign('idPuntoRecoleccion')->references('id')->on('puntos_Reciclaje');
+            $table->unsignedBigInteger('idRecolector');
+            $table->foreign('idRecolector')->references('id')->on('recolectores');
         });
     }
 

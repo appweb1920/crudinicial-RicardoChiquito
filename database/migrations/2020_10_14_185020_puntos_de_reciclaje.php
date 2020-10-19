@@ -19,7 +19,6 @@ class PuntosDeReciclaje extends Migration
             $table->string('direccion');
             $table->string('horario_Apertura');
             $table->string('horario_Cierre');
-            $table->rememberToken();
             $table->timestamps();
         });
     }

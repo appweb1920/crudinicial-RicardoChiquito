@@ -17,7 +17,6 @@ class Recolectores extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('dias_Recoleccion');
-            $table->rememberToken();
             $table->timestamps();
         });
     }  
