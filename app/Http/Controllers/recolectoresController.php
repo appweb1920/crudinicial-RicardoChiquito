@@ -25,7 +25,7 @@ class recolectoresController extends Controller
         $reco->dias_Recoleccion = $request->dias_Recoleccion;
         $reco->save();
 
-        return  view('creacionR');
+        return  redirect('/hola2');
        
     }
 

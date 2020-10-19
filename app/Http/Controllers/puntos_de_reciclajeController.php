@@ -25,7 +25,7 @@ class puntos_de_reciclajeController extends Controller
 
         $punre->save();
 
-        return  view('creacionPR');
+        return  redirect('/hola');
     }
 
     public function MuestraEdicion($id)
