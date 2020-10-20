@@ -43,32 +43,30 @@
     <input type="week"  name="dias_Recoleccion" placeholder="Semana" class="form-control mb-2"><br>
     <button type="submit" class="btn btn-secondary">Enviar</button><br><br>
     </form>
-
-    <div class="well well-small">
     <h4>Tabla de Recolectores</h4>
-	    <hr class="soft"/>
-	    <div class="row-fluid">
-        <table>
-            <thead>
-                <tr>
-                    <th>Edicion</th>
-                    <th>Nombre</th>
-                    <th>Dias de Recoleccion</th>
-                </tr>    
-            </thead>
-            <tbody>
-                @foreach($recolectores as $r)
-                <tr>
-                    <td><a href="/editar2/{{$r->id}}">Editar</a></td>
-                    <td>{{$r->nombre}}</td>
-                    <td>{{$r->dias_Recoleccion}}</td> 
-                </tr> 
-                @endforeach
-            </tbody>
-
-        </table>
-    </div>
-    </div>
+	 
     
+
+<table class="table" >
+  <thead class="thead-dark">
+    <tr>
+        <th>Edicion</th>
+        <th>Nombre</th>
+        <th>Dias de Recoleccion</th>
+        </tr>  
+    </tr>
+  </thead>
+  <tbody>
+  @foreach($recolectores as $r)
+    <tr>
+        <td><a href="/editar2/{{$r->id}}">Editar</a></td>
+        <td>{{$r->nombre}}</td>
+        <td>{{$r->dias_Recoleccion}}</td> 
+    </tr> 
+  @endforeach
+  </tbody>
+</table>
+   
+
 </body>
 </html>

@@ -15,6 +15,12 @@ class puntos_de_reciclajeController extends Controller
         return view('creacionPR')->with('puntos_Reciclaje',$pr);
     }
 
+    public function agregapuntos2()
+    {
+        $pr = puntos_Reciclaje::all();
+        return view('detallesRecoleccin')->with('puntos_Reciclaje',$pr);
+    }
+
     public function enlistado(Request $request)
     {
         $punre= new puntos_Reciclaje;

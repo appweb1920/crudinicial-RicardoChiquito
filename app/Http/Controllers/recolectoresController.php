@@ -18,6 +18,7 @@ class recolectoresController extends Controller
         
     }
 
+
     public function enlistado2(Request $request)
     {
         $reco= new recolectores;

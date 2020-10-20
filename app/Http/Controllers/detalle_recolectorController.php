@@ -5,25 +5,30 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\puntos_Reciclaje;
 use App\recolectores;
-use App\detalle_recolectorController;
+use App\detalle_recolector;
 
 class detalle_recolectorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    
+    public function enlistado3(Request $request)
     {
-        //
+        $dr= new detalle_recolector;
+        $dr->idPuntoRecoleccion = $request->idPuntoRecoleccion;
+        $dr->idRecolector = $request->idRecolector;
+        $dr->save();
+
+        return  redirect('/detalleReco');
+       
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function index()
+    {
+        $dr = detalle_recolector::all();
+        return view('detallesRecoleccin')->with('detaller',$dr);
+    }
+
+
+    
     public function create()
     {
         //

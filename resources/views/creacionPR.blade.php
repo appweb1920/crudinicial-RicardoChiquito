@@ -49,22 +49,23 @@
     <button type="submit" class="btn btn-secondary">Enviar</button><br><br>
     </form>
 
-    <div class="well well-small">
     <h4>Tabla de Puntos de Reciclaje</h4>
-	    <hr class="soft"/>
-	    <div class="row-fluid">
-        <table>
-            <thead>
-                <tr class='warning'>
+	  
+		
+<table class="table" >
+  <thead class="thead-dark">
+  
+    <tr>
                     <th>Edicion</th>
                     <th>tipoBasura</th>
                     <th>direccion</th>
                     <th>horario_Apertura</th>
                     <th>horario_Cierre</th>
-                </tr>    
-            </thead>
-            <tbody>
-                @foreach($puntos_Reciclaje as $pr)
+                </tr>  
+    </tr>
+  </thead>
+  <tbody>
+  @foreach($puntos_Reciclaje as $pr)
                 <tr>
                     <td><a href="/editar/{{$pr->id}}">Editar</a></td>
                     <td>{{$pr->tipoBasura}}</td>
@@ -73,15 +74,8 @@
                     <td>{{$pr->horario_Cierre}}</td>  
                 </tr> 
                 @endforeach
-            </tbody>
-
-        </table>
-        <div class="span8">
-    </hr>
-        </div>	
-		
-		
-   
+  </tbody>
+</table>
    
     
 </body>

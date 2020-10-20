@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class detalle_recolector extends Model
 {
     protected $table = "detalle_recolcetor";
-    //protected  $fillable = ['', 'dias_Recoleccion'];
+    protected  $fillable = ['idPuntoRecoleccion', 'idRecolector'];
 }
