@@ -54,26 +54,24 @@
 		
 <table class="table" >
   <thead class="thead-dark">
-  
     <tr>
-                    <th>Edicion</th>
-                    <th>tipoBasura</th>
-                    <th>direccion</th>
-                    <th>horario_Apertura</th>
-                    <th>horario_Cierre</th>
-                </tr>  
-    </tr>
-  </thead>
+        <th>Edicion</th>
+        <th>tipoBasura</th>
+        <th>direccion</th>
+        <th>horario_Apertura</th>
+        <th>horario_Cierre</th>
+    </tr>  
+   </thead>
   <tbody>
   @foreach($puntos_Reciclaje as $pr)
-                <tr>
-                    <td><a href="/editar/{{$pr->id}}">Editar</a></td>
-                    <td>{{$pr->tipoBasura}}</td>
-                    <td>{{$pr->direccion}}</td>
-                    <td>{{$pr->horario_Apertura}}</td>
-                    <td>{{$pr->horario_Cierre}}</td>  
-                </tr> 
-                @endforeach
+  <tr>
+    <td><a href="/editar/{{$pr->id}}">Editar</a></td>
+    <td>{{$pr->tipoBasura}}</td>
+    <td>{{$pr->direccion}}</td>
+    <td>{{$pr->horario_Apertura}}</td>
+    <td>{{$pr->horario_Cierre}}</td>  
+  </tr> 
+  @endforeach
   </tbody>
 </table>
    

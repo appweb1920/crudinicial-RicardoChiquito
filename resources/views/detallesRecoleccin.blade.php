@@ -28,8 +28,27 @@
 		
     </header>
 
+    <form action="/detalleReco2" method="POST">
+    @csrf
+    <div class="form-group">
+				<label for="nombre"><H4>Punto</H4></label>
+                <select name="idPuntoRecoleccion">
+                <option  value="0">@foreach($puntos_Reciclaje as $pr) {{$pr->tipoBasura}} 
+                                    @endforeach
+                </option>
+                
+                </select>
+    </div> 
+    <div class="form-group">
+				<label for="nombre"><H4>Recolector</H4></label>
+                <select name="idRecolector">
+                <option  value="0"></option>
+                </select>
+    </div> 
+    <button type="submit" class="btn btn-secondary">Enviar</button><br><br>
+    </form>
 
-
+    
     
 <table class="table" >
   <thead class="thead-dark">
