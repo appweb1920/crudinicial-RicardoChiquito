@@ -11,7 +11,8 @@
 <body>
 <header class="header" Align="center">
 <div class="container" Align="center">
-<h1> Detalles de Recolección </h1>				 
+<h1> Detalles de Recolección </h1>
+				 
         <div class="wrapper">
             <nav>				
 				<div class="navbar">
@@ -48,8 +49,7 @@
     <button type="submit" class="btn btn-secondary">Enviar</button><br><br>
     </form>
 
-    
-    
+
 <table class="table" >
   <thead class="thead-dark">
   
@@ -69,5 +69,17 @@
   @endforeach
   </tbody>
 </table>
+@if(Auth::user()->tipo != '1')
+    <p>logueado</p>
+@else
+<a href="{{url('/hola')}}">
+  <button type="button" class="btn btn-primary" style="margin-left:15px;">Crear Puntos</button>
+</a>
+
+<a href="{{url('/hola2')}}">
+  <button type="button" class="btn btn-primary" style="margin-left:15px;">Crear Recolectores</button>
+</a>
+@endif
+
 </body>
 </html>

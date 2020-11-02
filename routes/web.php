@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {return "home";});
+Route::get('/', function () {return view('welcome');});
 Route::get('/hola', 'puntos_de_reciclajeController@agregapuntos');
 Route::get('/hola2', 'recolectoresController@creacion');
 
@@ -29,3 +29,14 @@ Route::post('/editar2/guardaEdicion', 'recolectoresController@guardaEdicion');
 Route::get('/detalleReco', 'puntos_de_reciclajeController@agregapuntos2');
 Route::post('/detalleReco2/{id}', 'puntos_de_reciclajeController@agregapuntos3');
 
+Route::get('/ejemplo', function () {
+    return "no tines tipo";
+});
+
+Route::get('/noaccede', function () {
+    return "No puedes  acceder porque no eres administrador";
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

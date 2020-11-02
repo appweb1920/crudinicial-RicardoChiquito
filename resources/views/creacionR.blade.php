@@ -67,6 +67,8 @@
   </tbody>
 </table>
    
-
+<a href="{{url('/detalleReco')}}">
+  <button type="button" class="btn btn-primary" style="margin-left:15px;">Regresar</button>
+</a>
 </body>
 </html>
